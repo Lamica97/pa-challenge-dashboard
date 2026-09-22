@@ -1,0 +1,29 @@
+{
+  "name": "Bento Dashboard ประเด็นท้าทาย ว.PA 2568",
+  "short_name": "ว.PA 2568",
+  "description": "แดชบอร์ดสรุปประเด็นท้าทาย ว.PA 2568 - ครูณรงค์ฤทธิ์ อ่อนน่วมน้อย",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#3b0764",
+  "theme_color": "#3b0764",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./รูปภาพ/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./รูปภาพ/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./รูปภาพ/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
