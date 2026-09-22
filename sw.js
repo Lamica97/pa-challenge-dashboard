@@ -1,13 +1,13 @@
-const CACHE_NAME = 'pa-dashboard-v1';
+const CACHE_NAME = 'pa-dashboard-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './infographic_ประเด็นท้าทาย_bento_dashboard.html',
+  './infographic_ประเด็นท้าทาย_dashboard.html',
   './manifest.json',
-  './รูปภาพ/SUW%20Logo.png',
-  './รูปภาพ/apple-touch-icon.png',
-  './รูปภาพ/icon-192.png',
-  './รูปภาพ/icon-512.png',
+  './images/SUW_Logo.png',
+  './images/apple-touch-icon.png',
+  './images/icon-192.png',
+  './images/icon-512.png',
   'https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js'
 ];
 
