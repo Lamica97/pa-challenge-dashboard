@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bento Dashboard ประเด็นท้าทาย ว.PA 2568 - ครูณรงค์ฤทธิ์ อ่อนน่วมน้อย</title>
+  <title>ประเด็นท้าทาย ว.PA 2568 - ครูณรงค์ฤทธิ์ อ่อนน่วมน้อย</title>
   
   <!-- Apple Mobile Web App (iPad / iOS Standalone App Support) -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,11 +70,13 @@
     .bento-card:hover::after {
       opacity: 1;
     }
-    /* Hide scrollbars completely */
+    /* Hide scrollbars completely & enable smooth iOS momentum scrolling */
     #modal-card, #modal-content {
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      overflow-x: hidden;
     }
     #modal-card::-webkit-scrollbar, #modal-content::-webkit-scrollbar {
       display: none;
@@ -252,8 +254,8 @@
           </div>
         </div>
 
-        <div class="mt-3 bg-purple-900 text-white p-2.5 rounded-xl text-center text-xs font-bold shadow-2xs">
-          💡 ทางออก: Active Learning เทคนิค STAD เพื่อนช่วยเพื่อน
+        <div class="mt-3 text-center text-xs bg-purple-50 p-2 rounded-xl border border-purple-200 shadow-2xs">
+          💡 <strong class="font-black text-purple-950">ทางออก:</strong> <span class="font-normal text-black">Active Learning เทคนิค STAD เพื่อนช่วยเพื่อน</span>
         </div>
       </div>
 
@@ -324,7 +326,7 @@
       </div>
     </div>
 
-    <!-- ==================== ROW 3: CARDS 4 & 5 (TARGET & RESULTS TABLE) ==================== -->
+    <!-- ==================== ROW 3: CARDS 4 & 5 (TARGET & SLAVIN IMPROVEMENT POINTS) ==================== -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
 
       <!-- ==================== CARD 4: TARGET GROUP (Col-span-4) ==================== -->
@@ -361,89 +363,174 @@
             <div class="text-2xl font-black text-white">80 <span class="text-sm font-normal text-purple-200">คน</span></div>
           </div>
 
-          <div class="text-[11px] text-black space-y-1">
-            <div class="flex items-center justify-between bg-slate-50 p-1.5 px-2 rounded-lg border border-slate-200">
-              <span class="font-bold text-black">การแบ่งกลุ่ม STAD:</span>
-              <span class="font-black text-black">ใช้คะแนนพหุนามจัดคละ (เก่ง-กลาง-อ่อน 4–5 คน)</span>
+          <div class="text-[11px] text-black space-y-1.5">
+            <div class="bg-slate-50 p-2 rounded-xl border border-slate-200">
+              <div class="flex items-center justify-between mb-0.5">
+                <span class="font-bold text-black">การแบ่งกลุ่ม STAD:</span>
+                <span class="font-black text-purple-900 bg-purple-100 px-1.5 py-0.5 rounded text-[10px]">กลุ่มละ 4–5 คน</span>
+              </div>
+              <div class="text-[10.5px] font-semibold text-black">ใช้คะแนนพหุนามจัดคละความสามารถ (เก่ง–กลาง–อ่อน)</div>
             </div>
-            <div class="flex items-center justify-between bg-slate-50 p-1.5 px-2 rounded-lg border border-slate-200">
-              <span class="font-bold text-black">การคิดคะแนนพัฒนาการ:</span>
-              <span class="font-black text-black">เทียบฐานคะแนนเพื่อคิดคะแนนก้าวหน้า</span>
+            <div class="bg-slate-50 p-2 rounded-xl border border-slate-200">
+              <div class="flex items-center justify-between mb-0.5">
+                <span class="font-bold text-black">การเทียบฐานคะแนน:</span>
+                <span class="font-black text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded text-[10px]">วัดพัฒนาการ</span>
+              </div>
+              <div class="text-[10.5px] font-semibold text-black">เทียบฐานคะแนนเพื่อคิดคะแนนก้าวหน้าของตนเอง</div>
             </div>
           </div>
         </div>
 
-        <div class="mt-2 text-center text-[10px] text-purple-950 font-bold bg-purple-50 p-1 rounded-lg border border-purple-200">
-          🤝 ขับเคลื่อนร่วมกับคณะครูกลุ่มสาระฯ ผ่านกระบวนการ PLC
+        <div class="mt-2 text-center text-xs bg-purple-50 p-2 rounded-xl border border-purple-200 shadow-2xs">
+          🤝 <span class="font-normal text-black">ขับเคลื่อนร่วมกับคณะครูกลุ่มสาระฯ ผ่านกระบวนการ</span> <strong class="font-black text-purple-950">PLC</strong>
         </div>
       </div>
 
-      <!-- ==================== CARD 5: SCORE TABLE (Col-span-8) ==================== -->
-      <div id="card-table" onclick="openZoom('card-table')" class="md:col-span-8 bento-card p-5 bg-white flex flex-col justify-between">
+      <!-- ==================== CARD 5: SLAVIN IMPROVEMENT POINTS (Col-span-8) ==================== -->
+      <div id="card-slavin" onclick="openZoom('card-slavin')" class="md:col-span-8 bento-card p-5 bg-white flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between mb-2">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-3 border-b border-purple-100 pb-2">
             <div class="flex items-center gap-2">
               <span class="w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center text-xs font-black shadow-xs shrink-0">5</span>
-              <span class="text-xs font-black text-black flex items-center gap-1.5">
-                <span>📊</span>
-                ตารางแจกแจงความถี่คะแนนสอบเก็บคะแนน (เต็ม 5 คะแนน)
+              <span class="text-xs font-black text-purple-950 flex items-center gap-1.5">
+                <span>🎯</span>
+                วิธีคิดแต้มพัฒนาการเข้ากลุ่ม (STAD ตามแนวคิด Slavin)
               </span>
             </div>
-            <span class="text-[11px] text-black font-bold">นักเรียนกลุ่มเป้าหมาย 80 คน</span>
+            <span class="text-[10px] font-bold bg-purple-100 text-purple-900 px-2 py-0.5 rounded-full shrink-0">
+              เกณฑ์คะแนนสอบย่อยเต็ม 5
+            </span>
           </div>
 
-          <div class="overflow-x-auto my-2">
-            <table class="w-full text-xs sm:text-sm text-center border-collapse">
+          <!-- 1. Criteria Table (Full width on top) -->
+          <div class="overflow-hidden rounded-xl border border-purple-200 mb-2.5 shadow-2xs">
+            <table class="w-full text-xs text-left border-collapse">
               <thead>
-                <tr class="bg-purple-100 text-black font-black text-xs">
-                  <th class="py-2 px-2 border border-purple-300 text-black">คะแนนสอบ</th>
-                  <th class="py-2 px-2 border border-purple-300 text-black">0</th>
-                  <th class="py-2 px-2 border border-purple-300 text-black">1</th>
-                  <th class="py-2 px-2 border border-purple-300 text-black">2</th>
-                  <th class="py-2 px-2 border border-purple-300 bg-purple-200 font-black text-purple-950">3</th>
-                  <th class="py-2 px-2 border border-purple-300 bg-purple-200 font-black text-purple-950">4</th>
-                  <th class="py-2 px-2 border border-purple-300 bg-purple-200 font-black text-purple-950">5</th>
-                  <th class="py-2 px-3 border border-purple-300 bg-purple-900 text-white font-black">รวมผ่าน (3–5)</th>
+                <tr class="bg-purple-100 text-black font-black text-[11px] sm:text-xs">
+                  <th class="py-1.5 px-3 border-b border-purple-200">ผลการสอบเทียบกับคะแนนฐานเดิม</th>
+                  <th class="py-1.5 px-3 border-b border-purple-200 text-center whitespace-nowrap">แต้มพัฒนาการให้กลุ่ม</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="text-black font-bold text-xs">
-                  <td class="py-2 px-2 border border-purple-200 bg-slate-100 font-black text-black">จำนวน (คน)</td>
-                  <td class="py-2 px-2 border border-purple-200 text-rose-600 font-black">1</td>
-                  <td class="py-2 px-2 border border-purple-200 text-rose-600 font-black">7</td>
-                  <td class="py-2 px-2 border border-purple-200 text-rose-600 font-black">14</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">20</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">19</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">19</td>
-                  <td class="py-2 px-3 border border-purple-300 bg-purple-100 font-black text-purple-950 text-sm">58 คน</td>
+              <tbody class="divide-y divide-purple-100 text-[11px] sm:text-xs text-black">
+                <tr class="hover:bg-purple-50/50">
+                  <td class="py-1.5 px-3 font-bold text-black">ได้คะแนน ต่ำกว่า คะแนนฐานเดิม</td>
+                  <td class="py-1.5 px-3 text-center font-black text-rose-600 bg-rose-50/40">0 แต้ม</td>
                 </tr>
-                <tr class="text-black font-semibold text-xs">
-                  <td class="py-2 px-2 border border-purple-200 bg-slate-100 font-black text-black">ร้อยละ</td>
-                  <td class="py-2 px-2 border border-purple-200 text-black font-bold">1.25%</td>
-                  <td class="py-2 px-2 border border-purple-200 text-black font-bold">8.75%</td>
-                  <td class="py-2 px-2 border border-purple-200 text-black font-bold">17.50%</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">25.00%</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">23.75%</td>
-                  <td class="py-2 px-2 border border-purple-200 bg-purple-50 font-black text-purple-950">23.75%</td>
-                  <td class="py-2 px-3 border border-purple-300 bg-purple-100 font-black text-purple-950 text-sm">72.50%</td>
+                <tr class="hover:bg-purple-50/50">
+                  <td class="py-1.5 px-3 font-bold text-black">ได้คะแนน เท่าเดิม กับคะแนนฐาน</td>
+                  <td class="py-1.5 px-3 text-center font-black text-slate-800 bg-slate-50">1 แต้ม</td>
+                </tr>
+                <tr class="hover:bg-purple-50/50">
+                  <td class="py-1.5 px-3 font-bold text-black">ได้คะแนน มากกว่าเดิม +1 คะแนน</td>
+                  <td class="py-1.5 px-3 text-center font-black text-purple-950 bg-purple-50">2 แต้ม</td>
+                </tr>
+                <tr class="bg-purple-100/70 font-black">
+                  <td class="py-1.5 px-3 text-purple-950 font-black">ได้คะแนน มากกว่าเดิม ≥ 2 คะแนน หรือ สอบได้คะแนนเต็ม 5</td>
+                  <td class="py-1.5 px-3 text-center font-black text-emerald-800 bg-emerald-100/80">3 แต้ม <span class="text-[10px] font-bold text-emerald-700">(แต้มสูงสุด)</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <!-- 2. Example Cards (Nong A & Nong B Side-by-Side Underneath) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2 text-xs text-black">
+            <!-- Nong A (Weak) -->
+            <div class="bg-purple-50/90 p-2.5 rounded-xl border border-purple-200 flex flex-col justify-center">
+              <div class="flex items-center justify-between font-black text-purple-950 text-xs mb-1">
+                <span class="flex items-center gap-1">🌱 น้อง A (เด็กอ่อน)</span>
+                <span class="text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-black text-[10px]">+3 แต้มเต็ม</span>
+              </div>
+              <div class="text-black font-semibold text-[11px] leading-snug">
+                ฐานเดิม 1 ➔ เพื่อนช่วยติวจนสอบได้ 3 (<span class="text-emerald-700 font-black">+2</span>) ➔ ได้ 3 แต้มเต็มให้กลุ่ม!
+              </div>
+            </div>
+
+            <!-- Nong B (Smart) -->
+            <div class="bg-purple-50/90 p-2.5 rounded-xl border border-purple-200 flex flex-col justify-center">
+              <div class="flex items-center justify-between font-black text-purple-950 text-xs mb-1">
+                <span class="flex items-center gap-1">⭐ น้อง B (เด็กเก่ง)</span>
+                <span class="text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-black text-[10px]">+3 แต้มเต็ม</span>
+              </div>
+              <div class="text-black font-semibold text-[11px] leading-snug">
+                ฐานเดิม 3 ➔ มุ่งมั่นทำคะแนนได้ <span class="text-emerald-700 font-black">5 เต็ม (+2)</span> ➔ ได้ 3 แต้มเต็มให้กลุ่ม!
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="mt-2 text-xs text-black bg-purple-50/80 p-2.5 rounded-xl border border-purple-200 leading-relaxed">
-          ✨ <strong class="text-black font-black">การช่วยเหลือแก้ไขปัญหา:</strong> สำหรับนักเรียนที่ไม่ผ่านเกณฑ์ 22 คน (27.50%) ได้รับการแก้ไขปัญหาผ่านกิจกรรมเพื่อนช่วยเพื่อนในกลุ่ม STAD และการสอนซ่อมเสริมรายบุคคลจนมีผลการเรียนรู้ผ่านเกณฑ์ครบทุกคน
+        <!-- 3. Bottom Banner (Pattern matched with Card 4) -->
+        <div class="mt-2 text-center text-xs bg-purple-50 p-2 rounded-xl border border-purple-200 leading-relaxed shadow-2xs">
+          💡 <strong class="font-black text-purple-950">ผลลัพธ์เชิงบวก:</strong> <span class="font-normal text-black">ทั้งเด็กเก่งและเด็กอ่อนต่างทำแต้มสูงสุด (3 แต้ม) ให้กลุ่มได้เท่ากัน จึงเกิดความภูมิใจและกระตือรือร้นในการช่วยเหลือกัน</span>
         </div>
       </div>
 
     </div>
 
-    <!-- ==================== ROW 4: CARD 6 (QUALITATIVE 3 DIMENSIONS - Col-span-12) ==================== -->
+    <!-- ==================== ROW 4: CARD 6 (SCORE TABLE - Col-span-12) ==================== -->
+    <div id="card-table" onclick="openZoom('card-table')" class="bento-card p-5 bg-white flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-2 border-b border-purple-100 pb-2">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center text-xs font-black shadow-xs shrink-0">6</span>
+            <span class="text-xs font-black text-black flex items-center gap-1.5">
+              <span>📊</span>
+              ตารางแจกแจงความถี่คะแนนสอบเก็บคะแนน (เต็ม 5 คะแนน)
+            </span>
+          </div>
+          <span class="text-[11px] text-black font-bold">นักเรียนกลุ่มเป้าหมาย 80 คน</span>
+        </div>
+
+        <div class="overflow-x-auto my-2">
+          <table class="w-full text-xs sm:text-sm text-center border-collapse">
+            <thead>
+              <tr class="bg-purple-100 text-black font-black text-xs">
+                <th class="py-2.5 px-3 border border-purple-300 text-black">คะแนนสอบ</th>
+                <th class="py-2.5 px-3 border border-purple-300 text-black">0</th>
+                <th class="py-2.5 px-3 border border-purple-300 text-black">1</th>
+                <th class="py-2.5 px-3 border border-purple-300 text-black">2</th>
+                <th class="py-2.5 px-3 border border-purple-300 bg-purple-200 font-black text-purple-950">3</th>
+                <th class="py-2.5 px-3 border border-purple-300 bg-purple-200 font-black text-purple-950">4</th>
+                <th class="py-2.5 px-3 border border-purple-300 bg-purple-200 font-black text-purple-950">5</th>
+                <th class="py-2.5 px-4 border border-purple-300 bg-purple-900 text-white font-black">รวมผ่าน (3–5)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-black font-bold text-xs">
+                <td class="py-2.5 px-3 border border-purple-200 bg-slate-100 font-black text-black">จำนวน (คน)</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-rose-600 font-black">1</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-rose-600 font-black">7</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-rose-600 font-black">14</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">20</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">19</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">19</td>
+                <td class="py-2.5 px-4 border border-purple-300 bg-purple-100 font-black text-purple-950 text-sm">58 คน</td>
+              </tr>
+              <tr class="text-black font-semibold text-xs">
+                <td class="py-2.5 px-3 border border-purple-200 bg-slate-100 font-black text-black">ร้อยละ</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-black font-bold">1.25%</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-black font-bold">8.75%</td>
+                <td class="py-2.5 px-3 border border-purple-200 text-black font-bold">17.50%</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">25.00%</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">23.75%</td>
+                <td class="py-2.5 px-3 border border-purple-200 bg-purple-50 font-black text-purple-950">23.75%</td>
+                <td class="py-2.5 px-4 border border-purple-300 bg-purple-100 font-black text-purple-950 text-sm">72.50%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-2 text-center text-xs bg-purple-50 p-2.5 rounded-xl border border-purple-200 leading-relaxed shadow-2xs">
+        ✨ <strong class="font-black text-purple-950">การช่วยเหลือแก้ไขปัญหา:</strong> <span class="font-normal text-black">สำหรับนักเรียนที่ไม่ผ่านเกณฑ์ 22 คน (27.50%) ได้รับการแก้ไขปัญหาผ่านกิจกรรมเพื่อนช่วยเพื่อนในกลุ่ม STAD และการสอนซ่อมเสริมรายบุคคลจนมีผลการเรียนรู้ผ่านเกณฑ์ครบทุกคน</span>
+      </div>
+    </div>
+
+    <!-- ==================== ROW 5: CARD 7 (QUALITATIVE 3 DIMENSIONS - Col-span-12) ==================== -->
     <div id="card-qualitative" onclick="openZoom('card-qualitative')" class="bento-card p-5 bg-gradient-to-br from-purple-900 via-purple-950 to-indigo-950 text-white">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b border-purple-400/30 pb-2">
         <div class="flex items-center gap-2">
-          <span class="w-6 h-6 rounded-full bg-amber-400 text-purple-950 flex items-center justify-center text-xs font-black shadow-xs shrink-0">6</span>
+          <span class="w-6 h-6 rounded-full bg-amber-400 text-purple-950 flex items-center justify-center text-xs font-black shadow-xs shrink-0">7</span>
           <span class="text-xs font-bold text-purple-200 uppercase tracking-wider flex items-center gap-1.5">
             <span>🌟</span>
             ผลลัพธ์เชิงคุณภาพ 3 ด้าน
@@ -506,14 +593,15 @@
 
   <!-- JAVASCRIPT FOR INTERACTION & SEQUENTIAL NAVIGATION -->
   <script>
-    // Strict order matching user request: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+    // Strict order matching user request: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
     const cardsInfo = [
       { id: 'card-metric', num: 1, name: 'ผลสัมฤทธิ์ปลายทาง (Key Result)' },
       { id: 'card-problem', num: 2, name: 'สภาพปัญหาตั้งต้น (SAR ปี 2567)' },
       { id: 'card-innovation', num: 3, name: 'นวัตกรรมการจัดการเรียนรู้ (STAD + แบบฝึก 4 เรื่อง)' },
       { id: 'card-target', num: 4, name: 'กลุ่มเป้าหมายในการพัฒนา (ม.2 รวม 80 คน)' },
-      { id: 'card-table', num: 5, name: 'ตารางแจกแจงความถี่คะแนนสอบเก็บคะแนน' },
-      { id: 'card-qualitative', num: 6, name: 'ผลลัพธ์เชิงคุณภาพ 3 ด้าน' }
+      { id: 'card-slavin', num: 5, name: 'วิธีคิดแต้มพัฒนาการเข้ากลุ่ม (STAD ตามแนวคิด Slavin)' },
+      { id: 'card-table', num: 6, name: 'ตารางแจกแจงความถี่คะแนนสอบเก็บคะแนน' },
+      { id: 'card-qualitative', num: 7, name: 'ผลลัพธ์เชิงคุณภาพ 3 ด้าน' }
     ];
 
     const cardOrder = cardsInfo.map(c => c.id);
@@ -530,19 +618,70 @@
       const titleDisplay = document.getElementById('modal-title-display');
       const topbar = document.getElementById('modal-topbar');
 
-      // Clone the inner content
+      // Special dedicated light layout for card-hero in zoom modal
+      if (cardId === 'card-hero') {
+        modalBox.className = "bg-white text-black rounded-3xl shadow-2xl border-2 border-purple-400/80 w-[94vw] max-w-5xl min-h-[72vh] max-h-[88vh] p-6 sm:p-9 relative modal-enter flex flex-col";
+        topbar.className = "flex items-center justify-between pb-3 border-b border-purple-100 shrink-0 mb-4";
+        titleDisplay.className = "text-xs sm:text-sm font-black text-purple-950";
+        titleDisplay.textContent = 'ภาพรวมข้อตกลง PA ปี 2568';
+
+        content.innerHTML = `
+          <div class="flex-1 flex flex-col justify-center max-w-4xl mx-auto w-full py-4 space-y-6">
+            <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+              <img src="./images/SUW_Logo.png" onerror="this.src='./รูปภาพ/SUW Logo.png'" alt="ตราโรงเรียน" class="w-24 h-24 sm:w-28 sm:h-28 object-contain drop-shadow-md shrink-0">
+              <div class="space-y-2.5">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span class="bg-amber-100 text-amber-950 border border-amber-300 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow-2xs">
+                    ข้อตกลง PA ปีการศึกษา 2568
+                  </span>
+                  <span class="text-xs text-purple-900 font-bold">โรงเรียนสุโขทัยวิทยาคม • สพม.สุโขทัย</span>
+                  <span class="bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
+                    ระดับคาดหวัง: การแก้ไขปัญหา
+                  </span>
+                </div>
+                <h1 class="text-xl sm:text-3xl font-black leading-snug tracking-tight text-purple-950">
+                  <span class="thai-phrase">การพัฒนาทักษะการแยกตัวประกอบพหุนามดีกรีสอง</span><br class="hidden sm:inline">
+                  <span class="thai-phrase">ด้วยการจัดการเรียนรู้แบบร่วมมือ เทคนิค STAD</span> 
+                  <span class="thai-phrase">ร่วมกับชุดแบบฝึกทักษะ</span>
+                </h1>
+                <div class="text-xs sm:text-sm text-black font-semibold mt-1 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span class="bg-purple-100 text-purple-950 px-3 py-1 rounded-lg border border-purple-200 font-bold">รายวิชาคณิตศาสตร์เพิ่มเติม (ค22212) ม.2</span>
+                  <span>•</span>
+                  <span class="font-black text-emerald-800 bg-emerald-100/60 px-3 py-1 rounded-lg border border-emerald-200">ผลการดำเนินงานผ่านเกณฑ์ 72.50% (บรรลุเป้าหมาย)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teacher Box: White & Light Purple Card -->
+            <div class="bg-purple-50/90 border-2 border-purple-200 p-5 px-7 rounded-2xl text-left shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
+              <div>
+                <div class="text-xs text-purple-900 font-black">ผู้จัดทำข้อตกลง :</div>
+                <div class="font-black text-purple-950 text-xl sm:text-2xl mt-0.5">นายณรงค์ฤทธิ์ อ่อนน่วมน้อย</div>
+                <div class="text-xs text-black font-semibold mt-0.5">ตำแหน่ง ครู • กลุ่มสาระการเรียนรู้คณิตศาสตร์</div>
+              </div>
+              <div class="bg-white p-3 px-5 rounded-xl border border-purple-200 text-center shadow-2xs">
+                <div class="text-xs text-purple-950 font-bold">โรงเรียนสุโขทัยวิทยาคม</div>
+                <div class="text-[11px] text-black font-medium">สำนักงานเขตพื้นที่การศึกษามัธยมศึกษาสุโขทัย</div>
+              </div>
+            </div>
+          </div>
+        `;
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+
+      // Clone the inner content for other cards
       content.innerHTML = sourceEl.innerHTML;
 
       // Section title
       const cardMeta = cardsInfo.find(c => c.id === cardId);
       if (cardMeta) {
         titleDisplay.textContent = `ส่วนที่ ${cardMeta.num}: ${cardMeta.name}`;
-      } else if (cardId === 'card-hero') {
-        titleDisplay.textContent = 'ภาพรวมข้อตกลง PA ปี 2568';
       }
 
       // Dark vs Light styling for modal
-      if (cardId === 'card-hero' || cardId === 'card-qualitative') {
+      if (cardId === 'card-qualitative') {
         modalBox.className = "bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 text-white rounded-3xl shadow-2xl border-2 border-purple-400/80 w-[94vw] max-w-5xl min-h-[72vh] max-h-[88vh] p-6 sm:p-9 relative modal-enter flex flex-col";
         topbar.className = "flex items-center justify-between pb-3 border-b border-purple-400/30 shrink-0 mb-4";
         titleDisplay.className = "text-xs sm:text-sm font-bold text-purple-200";
@@ -587,7 +726,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeZoomDirect();
-      } else if (e.key >= '1' && e.key <= '6') {
+      } else if (e.key >= '1' && e.key <= '7') {
         const num = parseInt(e.key, 10);
         const target = cardsInfo.find(c => c.num === num);
         if (target) openZoom(target.id);

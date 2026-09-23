@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pa-dashboard-v3';
+const CACHE_NAME = 'pa-dashboard-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
